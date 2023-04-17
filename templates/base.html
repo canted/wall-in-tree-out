@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tear down this wall, turn it into a tree</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
+    <style>
+      @import url('https://fonts.cdnfonts.com/css/century-gothic');
+
+      *,
+      h1 {
+        font-family: 'Century Gothic', sans-serif;
+      }
+      .unreset h1 {
+        font-size: 2.5em;
+      }
+      .unreset ul {
+        list-style: square;
+        margin-left: 20px;
+      }
+      .unreset > ul {
+        padding: 20px 0;
+      }
+
+      #loading-indicator {
+        display: none;
+      }
+      #loading-indicator.htmx-request {
+        display:inline;
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-blue-100 leading-normal tracking-normal">
+    <div class="container w-full mx-auto">
+      <div class="w-full px-4 md:px-6 text-gray-800 leading-normal">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    </div>
+    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="flex flex-wrap">
+  <div class="w-full md:w-1/2">
+    <h1 class="break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">
+      Tear down a wall, turn it into a tree
+    </h1>
+    <p class="text-sm md:text-base font-normal text-gray-600">Put a wall of text in, you will get an organized tree with important elements on the top level and discoverable details deeper down</p>
+
+
+    <form hx-post="/submit" hx-target="#response" hx-indicator="#loading-indicator" onclick="document.getElementById('response').innerHTML=''" class="flex flex-col items-end">
+      <button type="submit" class="mb-4 px-4 py-2 bg-green-500 text-white rounded-md">
+        Turn it into a tree →
+      </button>
+      <textarea id="wall" name="message" class="w-full p-2 border border-gray-300 rounded-md" rows="18"
+        placeholder="Paste a wall of text here">
+K19. Grand Landing
+Massive stairs rise to a landing 20 feet wide by 40 feet long.
+Stone arches support a ceiling covered with frescos, 20 feet
+overhead. The frescos faded lines depict the stone mountain
+atop which Ravenloft stands, being taken by armored forces on
+horseback. The faces of the characters in the fresco are scratched
+beyond recognition. Dust floats in the air here, making it
+difficult to see details. There is a staircase on each side of the
+20-foot-wide south wall. There are two alcoves between the
+staircases. Light filtering through the dust shows two suits of
+armor covered with dark stains, one standing in each alcove.
+Each suit of armor holds a mace designed like a curved dragon
+head. Engraved words on the arches above the alcoves are
+scratched out.
+Both staircases lead to K25. The massive stairs lead down to K8.
+Anyone crossing in front of the alcoves activates the suits of armor.
+The suits of armor are rigged to a mechanical device activated
+by pressure plates in front of the alcoves. There is a 60% chance that
+any weight over 400 gp (40 pounds) activates the trap. When
+activated, one of the suits springs forward, flailing its arms and
+mace. It hits and does 1-4 points of damage if it rolls 16+ on 1d20.
+After leaping out it retracts, only to leap again if weight is still on
+the plate. The device is purely mechanical and acts very much like
+a puppet. This little joke is intended to spook more than damage.
+        </textarea>
+    </form>
+  </div>
+  <div class="w-full md:w-1/2">
+    <blockquote id="response" class="mt-20 mb-8 pl-8 md:pl-12 unreset">
+      <h1>K19. Grand Landing</h1>
+      <ul>
+        <li>Massive stairs rise to a landing 20 feet wide by 40 feet long</li>
+        <li>Stone arches support a ceiling covered with frescos, 20 feet overhead
+            <ul>
+              <li>frescos depict the stone mountain atop which Ravenloft stands, being taken by armored forces on horseback</li>
+              <li>faces of the characters in the fresco are scratched beyond recognition</li>
+              <li>Dust floats in the air, making it difficult to see details</li>
+            </ul>
+        </li>
+        <li>There is a staircase on each side of the 20-foot-wide south wall</li>
+        <li>Two alcoves between the staircases</li>
+        <li>Light filtering through the dust shows two suits of armor covered with dark stains, one standing in each alcove
+        </li>
+        <li>each suit of armor holds a mace designed like a curved dragon head</li>
+        <li>▲ Trigger: Anyone crossing in front of the alcoves activates the suits of armor<ul>
+            <li>the suits of armor are rigged to a mechanical device activated by pressure plates in front of the alcoves</li>
+            <li>60% chance that any weight over 400 gp (40 pounds) activates the trap</li>
+            <li>when activated, one of the suits springs forward, flailing its arms and mace</li>
+            <li>hits and does 1-4 points of damage if it rolls 16+ on 1d20</li>
+            <li>after leaping out it retracts, only to leap again if weight is still on the plate</li>
+            <li>Note: The device is purely mechanical and acts very much like a puppet. This little joke is intended to spook
+              more than damage</li>
+          </ul>
+        </li>
+        <li>Engraved words on the arches above the alcoves are scratched out</li>
+        <li>Both staircases lead to K25</li>
+        <li>The massive stairs lead down to K8</li>
+      </ul>
+    </blockquote>
+
+    <div id="loading-indicator" class="absolute space-y-9 w-full md:w-1/2 p-10 mt-16" style="top: 0; right: 0; ">
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.75s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.65s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.95s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.8s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.9s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.05s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.9s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.85s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.65s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.75s alternate shimmer infinite"></div>
+      </div>
+      <div class="h-3 w-5/5 rounded-lg isolate overflow-hidden">
+        <div class="h-3 w-5/5 inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black to-transparent opacity-30"
+          style="animation: 1.95s alternate shimmer infinite"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
