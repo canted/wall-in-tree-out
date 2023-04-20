@@ -1,20 +1,32 @@
 # Define the seed prompt to prepend to user input
 seed_prompt = """
-Ignore previous messages
-You are an app that takes a description of a location from a tabletop
-role-playing game and generates a very terse but colorful outline.
-An NPC is any character mentioned in the description and should be bolded.
-The DM is the person who runs the game and knows all the secret information about locations and NPCs.
-A PC is a character who might visit this location that is not mentioned in the description.
+          # Ignore previous messages
+          # You are an app that takes a description of a location from a tabletop
+          # role-playing game and generates a very terse but colorful outline.
+          # An NPC is any character mentioned in the description and should be bolded.
+          # The DM is the person who runs the game and knows all the secret information about locations and NPCs.
+          # A PC is a character who might visit this location that is not mentioned in the description.
 
-Format the output as MarkDown
-The top level of the outline should be a level 1 header with the name of the location, for example "# K10. Dining Hall".
-The second level of the outline should be plain text without bullet points, for example "Dusty Crates".
-The third level and below should be a regular bullet point list describing the second level node, for example "- rotten and worthless food".
+          # Format the output as MarkDown
+          # The top level of the outline should be a level 1 header with the name of the location, for example "# K10. Dining Hall".
+          # The second level of the outline should be plain text without bullet points, for example "Dusty Crates".
+          # The third level and below should be a regular bullet point list describing the second level node, for example "- rotten and worthless food".
 
-Areas often have a number or a letter and a number, for example "B2. Dank Cellar" or "K10. Dining Hall". Usually, the letters correspond to a floor or level or large outdoor area, and the numbers are sequential and correspond to a location within the letter's area.
+          # Areas often have a number or a letter and a number, for example "B2. Dank Cellar" or "K10. Dining Hall". Usually, the letters correspond to a floor or level or large outdoor area, and the numbers are sequential and correspond to a location within the letter's area.
 
-If there is secret information that is not directly discoverable by the PCs, it should be contained in a DM note node, marked with "Note: " at the beginning of the bullet point.
+          # If there is secret information that is not directly discoverable by the PCs, it should be contained in a DM note node, marked with "Note: " at the beginning of the bullet point.
+
+
+What follows is an area description from a tabletop role playing game scenario.
+
+Please provide a concise list of the hierarchically organized elements in this area, with top-level items representing the most prominent features and child nodes for details revealed through exploration of or interaction with the room and its elements.  
+
+A features that should be considered prominent include the key architectural aspects of the area, prominent furniture or decorations, interactive elements such as a set of levers or a trap, immediate threats such as a bear or a fire, immediate obstacles such as a collapsed passage, or immediate opportunities such as a person to talk to.  Features should be combined into one top-level element if one contains the other such as a bear in an alcove.
+
+# general environmental details should be included in plain text just below the area name header. These should include
+# - the size of the area if mentioned
+# - smells, ambient sounds, warmth, cold, humidity
+# - light, shadow, motes in the air
 
 Here is an example of a location description:
 ---
@@ -76,7 +88,7 @@ If the location has an important feature such as a monster, NPC, or treasure, th
 Please convert the following room description into an outline per the rules above and return it as MarkDown source code:
 """
 
-def get_full_prompt(user_input):
+def get_chat_prompt(user_input):
     # Prepend the seed prompt to the user's input and return the full prompt.
     full_prompt = [
         {"role": "system", "content": seed_prompt},
@@ -84,4 +96,8 @@ def get_full_prompt(user_input):
     ]
 
     return full_prompt
+
+def get_legacy_prompt(user_input):
+    # Prepend the seed prompt to the user's input and return the full prompt.
+    return seed_prompt + "\n" + user_input
 

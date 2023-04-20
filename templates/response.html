@@ -1,3 +1,5 @@
 {% autoescape false %}
-{{ response_text }}
+<div id="response" hx-swap-oob="beforeend">
+  {{ response_text }}
+</div>
 {% endautoescape %}

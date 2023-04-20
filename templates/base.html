@@ -48,6 +48,48 @@
         {% endblock content %}
       </div>
     </div>
-    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.0/htmx.min.js"
+  integrity="sha512-+w1WYSgxzYpQuYBFPKusU5/k7MHat9SA7OqeugUomdCCkOR9reE0pBgAPDoAxYR2dQx+1++3eu76Wt3E83bmNQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.0/ext/debug.min.js"
+  integrity="sha512-8tLaj4AEKBh5AdD5nI4CfpEl2IfaXJH2wSuHxnvhXX4vPAnBm/N1PRMjVmhFybVpyzb5RFk30YSPDPBBFtCEEQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.0/ext/ws.min.js"
+  integrity="sha512-p4TSlJAgSMOb+YX6+xHXRPr0mHtU+MsbuZslYginh9eO5umdT8GgDFramBkbvKkT1/wAaCEvsrU7sEBLySUYgQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+      document.addEventListener("htmx:configRequest", function(event) {
+        event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+      });
+
+      document.addEventListener("htmx:wsConnecting", function(event) {
+        console.log("htmx:wsConnecting", event);
+      });
+      document.addEventListener("htmx:wsOpen", function(event) {
+        console.log("htmx:wsOpen", event);
+      });
+      document.addEventListener("htmx:wsClose", function(event) {
+        console.log("htmx:wsClose", event);
+      });
+      document.addEventListener("htmx:wsError", function(event) {
+        console.log("htmx:wsError", event);
+      });
+      document.addEventListener("htmx:wsBeforeMessage", function(event) {
+        console.log("htmx:wsBeforeMessage", event);
+      });
+      document.addEventListener("htmx:wsAfterMessage", function(event) {
+        console.log("htmx:wsAfterMessage", event);
+      });
+      document.addEventListener("htmx:wsConfigSend", function(event) {
+        console.log("htmx:wsConfigSend", event);
+      });
+      document.addEventListener("htmx:wsBeforeSend", function(event) {
+        console.log("htmx:wsBeforeSend", event);
+      });
+      document.addEventListener("htmx:wsAfterSend", function(event) {
+        console.log("htmx:wsAfterSend", event);
+      });
+    </script>
   </body>
 </html>

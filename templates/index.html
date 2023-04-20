@@ -3,19 +3,19 @@
 {% block content %}
 
 
-<div class="flex flex-wrap">
+<div class="flex flex-wrap" hx-ext="ws" ws-connect="/completion">
   <div class="w-full md:w-1/2">
     <h1 class="break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">
       Tear down a wall, turn it into a tree
     </h1>
     <p class="text-sm md:text-base font-normal text-gray-600">Put a wall of text in, you will get an organized tree with important elements on the top level and discoverable details deeper down</p>
 
-
-    <form hx-post="/submit" hx-target="#response" hx-indicator="#loading-indicator" onclick="document.getElementById('response').innerHTML=''" class="flex flex-col items-end">
-      <button type="submit" class="mb-4 px-4 py-2 bg-green-500 text-white rounded-md">
+    <!-- hx-post="/submit" hx-target="#response" hx-indicator="#loading-indicator" -->
+    <form ws-send class="flex flex-col items-end">
+      <button type="submit" hx-target="#response" class="mb-4 px-4 py-2 bg-green-500 text-white rounded-md" onclick="document.getElementById('response').innerHTML=''">
         Turn it into a tree →
       </button>
-      <textarea id="wall" name="message" class="w-full p-2 border border-gray-300 rounded-md" rows="18"
+      <textarea id="wall" name="wall" class="w-full p-2 border border-gray-300 rounded-md" rows="18"
         placeholder="Paste a wall of text here">
 K19. Grand Landing
 Massive stairs rise to a landing 20 feet wide by 40 feet long.
