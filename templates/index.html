@@ -6,14 +6,19 @@
 <div class="flex flex-wrap" hx-ext="ws" ws-connect="/completion">
   <div class="w-full md:w-1/2">
     <h1 class="break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">
-      Tear down a wall, turn it into a tree
+      Make an Exploration Tree
     </h1>
-    <p class="text-sm md:text-base font-normal text-gray-600">Put a wall of text in, you will get an organized tree with important elements on the top level and discoverable details deeper down</p>
+    <p class="text-sm md:text-base font-normal text-gray-600">Enter wall of text, get back an exploration tree organized with important elements on the top level and discoverable details deeper inside. Everything is a revelation</p>
 
     <!-- hx-post="/submit" hx-target="#response" hx-indicator="#loading-indicator" -->
     <form ws-send class="flex flex-col items-end">
-      <button type="submit" hx-target="#response" class="mb-4 px-4 py-2 bg-green-500 text-white rounded-md" onclick="document.getElementById('response').innerHTML=''">
-        Turn it into a tree →
+      <button type="submit" hx-target="#response" class="my-4 px-4 py-2 bg-green-500 text-white rounded-md" onclick="document.getElementById('response').innerHTML=''">
+        Make an exploration tree 
+        <svg style="display: inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+          <path fill-rule="evenodd"
+            d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
+            clip-rule="evenodd" />
+        </svg>
       </button>
       <textarea id="wall" name="wall" class="w-full p-2 border border-gray-300 rounded-md" rows="18"
         placeholder="Paste a wall of text here">
